@@ -1,0 +1,21 @@
+body { 
+	padding-top: 60px; 
+}
+
+.logo {
+	font-family: 'Cabin', sans-serif;
+	text-align: center;
+}
+
+.logo h1 {
+	width: 260px;
+	margin: auto;
+	font-size: 8rem;
+	color: #3E3E3E;
+	border-top: 10px solid #3E3E3E;
+}
+
+.time {
+	font-family: 'Arial', sans-serif;
+	text-align: center;
+}

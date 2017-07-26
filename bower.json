@@ -1,0 +1,12 @@
+{
+  "name": "angular",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-timer": "^1.3.5",
+    "moment": "momentjs#^2.18.1",
+    "humanize-duration": "^3.10.1"
+  }
+}
