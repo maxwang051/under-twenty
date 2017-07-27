@@ -15,11 +15,14 @@
 </div>
 
 <div class="times">
-	<ul>
+	<ul ng-if="times.length">
 		<li ng-repeat="time in times" class="time-box">
 			<span class="removeTime" ng-click="removeTime(time)">x</span><span class="time">{{ time.formatted }}</span>
 		</li>
 	</ul>
+	<div ng-if="!times.length" class="no-times">
+		<h2>No times yet</h2>
+	</div>
 	<!-- <div id="averageTime" class="time">
 		{{ averageTime }}
 	</div> -->

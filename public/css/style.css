@@ -109,3 +109,12 @@ body {
 	position: absolute;
 	top: 50%;
 }
+
+.no-times {
+	color: white;
+	font-family: 'Cabin', sans-serif;
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
