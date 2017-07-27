@@ -73,7 +73,7 @@ body {
 
 .times {
 	background: #3E3E3E;
-	width: 250px;
+	width: 300px;
 	height: 50vh;
 	margin: auto;
 	overflow: scroll;
@@ -104,7 +104,7 @@ body {
 .removeTime {
 	font-size: 1.5em;
 	cursor: pointer;
-	margin-left: -50px;
+	margin-left: -75px;
 	margin-top: -18px;
 	position: absolute;
 	top: 50%;
