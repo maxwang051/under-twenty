@@ -1,6 +1,7 @@
 angular.module('underTwenty', [
 	'ngRoute', 
-	'appRoutes', 
+	'appRoutes',
+	'appDirectives', 
 	'MainCtrl',
 	'timer'
 ]);

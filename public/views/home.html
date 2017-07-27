@@ -1,11 +1,23 @@
 <div class="logo">
-	<h1>twenty</h1>
+	<div class="logo-block">
+		<h1><span id="t1">t</span><span id="w">w</span><span id="e">e</span><span id="n">n</span><span id="t2">t</span><span id="y">y</span>
+		</h1>
+	</div>
 </div>
 
 <div class="timer">
-	<timer interval="10">
-		<h2 class="time">
+	<timer interval="10" autostart="false" 
+		mminutes="currentMinutes" sseconds="currentSeconds" hhundredths="currentHundredths">
+		<h2 class="currentTime">
 			{{mminutes}}:{{sseconds}}.{{ hhundredths }}
 		</h2>
 	</timer>
+</div>
+
+<div class="times">
+	<ul>
+		<li ng-repeat="time in times" class="time">
+			{{ time.formatted }}
+		</li>
+	</ul>
 </div>

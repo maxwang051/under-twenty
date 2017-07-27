@@ -1,5 +1,32 @@
 body { 
 	padding-top: 60px; 
+	color: #3E3E3E;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#t1 {
+	color: white;
+}
+
+#w {
+	color: #bae1ff;
+}
+
+#e {
+	color: #ffdfba;
+}
+
+#n {
+	color: #baffc9;
+}
+
+#t2 {
+	color: #ffb3ba;
+}
+
+#y {
+	color: #ffffba;
 }
 
 .logo {
@@ -7,15 +34,48 @@ body {
 	text-align: center;
 }
 
+.logo-block {
+	background: #3E3E3E;
+	margin: auto;
+	padding: 20px;
+	height: 85px;
+	width: 260px;
+}
+
 .logo h1 {
+	line-height: 60px;
 	width: 260px;
 	margin: auto;
 	font-size: 8rem;
-	color: #3E3E3E;
-	border-top: 10px solid #3E3E3E;
+	border-top: 10px solid white;
+}
+
+.timer {
+	width: 270px;
+	margin: auto;
+	margin-top: 100px;
+}
+
+.currentTime {
+	font-weight: 600;
+	font-size: 7rem;
+	font-family: 'Arial', sans-serif;
+}
+
+.times {
+	width: 250px;
+	height: 400px;
+	margin: auto;
+	margin-top: 100px;
+	overflow: scroll;
 }
 
 .time {
 	font-family: 'Arial', sans-serif;
+	font-size: 2em;
+	font-weight: bold;
+	line-height: 40px;
+	height: 40px;
 	text-align: center;
+	list-style: none;
 }
