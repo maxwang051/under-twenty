@@ -1,8 +1,14 @@
 body { 
-	padding-top: 60px; 
+	padding-top: 40px; 
 	color: #3E3E3E;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; 
+    cursor: default;
 }
 
 #t1 {
@@ -10,7 +16,7 @@ body {
 }
 
 #w {
-	color: #bae1ff;
+	color: #ffffba;
 }
 
 #e {
@@ -18,15 +24,15 @@ body {
 }
 
 #n {
-	color: #baffc9;
-}
-
-#t2 {
 	color: #ffb3ba;
 }
 
+#t2 {
+	color: #bae1ff;
+}
+
 #y {
-	color: #ffffba;
+	color: #baffc9;
 }
 
 .logo {
@@ -60,22 +66,27 @@ body {
 	font-weight: 600;
 	font-size: 7rem;
 	font-family: 'Arial', sans-serif;
+	color: #3E3E3E;
 }
 
 .times {
+	background: #3E3E3E;
 	width: 250px;
-	height: 400px;
+	height: 430px;
 	margin: auto;
 	margin-top: 100px;
 	overflow: scroll;
 }
 
 .time {
+	margin: 5px;
+	background: white;
+	color: #3E3E3E;
 	font-family: 'Arial', sans-serif;
 	font-size: 2em;
 	font-weight: bold;
-	line-height: 40px;
-	height: 40px;
+	line-height: 60px;
+	height: 60px;
 	text-align: center;
 	list-style: none;
 }

@@ -26,7 +26,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 		$scope.$broadcast('timer-stop');
 		timerStarted = false;
 
-		$scope.times.push({
+		$scope.times.unshift({
 			time: $scope.currentHundredths,
 			formatted: $scope.currentMinutes + ":" + $scope.currentSeconds + "." + $scope.currentHundredths
 		});
