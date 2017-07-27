@@ -16,8 +16,11 @@
 
 <div class="times">
 	<ul>
-		<li ng-repeat="time in times" class="time">
-			{{ time.formatted }}
+		<li ng-repeat="time in times" class="time-box">
+			<span class="removeTime" ng-click="removeTime(time)">x</span><span class="time">{{ time.formatted }}</span>
 		</li>
 	</ul>
+	<!-- <div id="averageTime" class="time">
+		{{ averageTime }}
+	</div> -->
 </div>

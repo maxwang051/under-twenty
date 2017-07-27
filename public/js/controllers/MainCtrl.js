@@ -17,6 +17,11 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 		begin ? null : timerStop();
 	})
 
+	$scope.removeTime = function(time) {
+		var index = $scope.times.indexOf(time);
+		$scope.times.splice(index, 1);
+	}
+
 	var timerStart = function() {
 		$scope.$broadcast('timer-start');
 		timerStarted = true;

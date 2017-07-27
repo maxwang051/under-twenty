@@ -1,5 +1,6 @@
 body { 
-	padding-top: 40px; 
+	padding-top: 5vh; 
+	padding-bottom: 5vh;
 	color: #3E3E3E;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -59,7 +60,8 @@ body {
 .timer {
 	width: 270px;
 	margin: auto;
-	margin-top: 100px;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
 }
 
 .currentTime {
@@ -72,21 +74,38 @@ body {
 .times {
 	background: #3E3E3E;
 	width: 250px;
-	height: 430px;
+	height: 50vh;
 	margin: auto;
-	margin-top: 100px;
 	overflow: scroll;
 }
 
-.time {
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.time-box {
 	margin: 5px;
+	position: relative;
 	background: white;
 	color: #3E3E3E;
 	font-family: 'Arial', sans-serif;
-	font-size: 2em;
 	font-weight: bold;
-	line-height: 60px;
 	height: 60px;
 	text-align: center;
 	list-style: none;
+	border-radius: 3px;
+}
+
+.time {
+	line-height: 60px;
+	font-size: 2em;
+}
+
+.removeTime {
+	font-size: 1.5em;
+	cursor: pointer;
+	margin-left: -50px;
+	margin-top: -18px;
+	position: absolute;
+	top: 50%;
 }
