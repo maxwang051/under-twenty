@@ -118,3 +118,34 @@ body {
 	top: 50%;
 	transform: translateY(-50%);
 }
+
+.toggle-btn-container {
+	font-family: 'Cabin', sans-serif;
+	color: #3E3E3E;
+	cursor: pointer;
+	margin: auto;
+	background: white;
+	border: 2px solid #3E3E3E;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-top: 0;
+	height: 50px;
+	width: 120px;
+	text-align: center;
+}
+
+.stat-box {
+	padding-right: 45px;
+	line-height: 60px;
+	font-size: 2em;
+	margin: 5px;
+	position: relative;
+	background: white;
+	color: #3E3E3E;
+	font-family: 'Arial', sans-serif;
+	font-weight: bold;
+	height: 60px;
+	list-style: none;
+	border-radius: 3px;
+	text-align: right;
+}

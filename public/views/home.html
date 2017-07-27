@@ -15,15 +15,25 @@
 </div>
 
 <div class="times">
-	<ul ng-if="times.length">
+	<ul ng-if="times.length && !viewingStats">
 		<li ng-repeat="time in times" class="time-box">
 			<span class="removeTime" ng-click="removeTime(time)">x</span><span class="time">{{ time.formatted }}</span>
 		</li>
 	</ul>
-	<div ng-if="!times.length" class="no-times">
+	<div ng-if="!times.length && !viewingStats" class="no-times">
 		<h2>no times yet</h2>
 	</div>
 	<!-- <div id="averageTime" class="time">
 		{{ averageTime }}
 	</div> -->
+
+	<ul ng-if="viewingStats">
+		<li ng-repeat="stat in stats" class="stat-box">
+			{{ stat.label }}: {{ stat.value }}
+		</li>
+	</ul>
+</div>
+
+<div class="toggle-btn-container" ng-click="toggleTab()">
+	<h3>{{ viewingStats ? 'times' : 'stats' }}</h3>
 </div>
