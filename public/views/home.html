@@ -34,6 +34,7 @@
 	</ul>
 </div>
 
-<div class="toggle-btn-container" ng-click="toggleTab()">
+<div class="toggle-btn-container" ng-click="toggleTab()" 
+	ng-class="{ 'times-toggle' : !viewingStats, 'stats-toggle': viewingStats }">
 	<h3>{{ viewingStats ? 'times' : 'stats' }}</h3>
 </div>
