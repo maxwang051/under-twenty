@@ -15,19 +15,32 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 	};
 	$scope.viewingStats = false;
 
-	$scope.getAverage = function() {
+	$scope.$watch('times', function(newValue, oldValue) {
 		var sum = 0;
-		for (var i = 0; i < $scope.times.length; i++) {
-			console.log($scope.times[i].time);
-			sum += parseInt($scope.times[i].time);
+		var best = Number.MAX_SAFE_INTEGER;
+		for (var i = 0; i < newValue.length; i++) {
+			if (newValue[i].time) {
+				if (typeof newValue[i].time === 'string') {
+					console.log(newValue[i].time);
+				}
+				if (newValue[i].time < best) {
+					best = newValue[i].time;
+				}
+				sum += newValue[i].time;
+			}
 		}
 
-		var average = sum / $scope.times.length;
+		if (sum) {
+			var average = sum / $scope.times.length;
 
-		if (average) {
 			$scope.stats.average.value = formatTime(average);
 		}
-	}
+
+		if (best < Number.MAX_SAFE_INTEGER) {
+			$scope.stats.best.value = formatTime(best);
+		}
+		
+	}, true);
 
 	$scope.toggleTab = function() {
 		$scope.viewingStats = !$scope.viewingStats;
@@ -61,17 +74,16 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 		timerStarted = false;
 
 		$scope.times.unshift({
-			time: $scope.currentMinutes*60*100 + $scope.currentSeconds*100 + $scope.currentHundredths,
+			time: parseInt($scope.currentMinutes)*60*100 + 
+				parseInt($scope.currentSeconds)*100 + parseInt($scope.currentHundredths),
 			formatted: $scope.currentMinutes + ":" + $scope.currentSeconds + "." + $scope.currentHundredths
 		});
 
-		$scope.getAverage();
 		$scope.$apply();
 	}
 
 	var formatTime = function(time) {
 		var temp = time;
-		console.log(time);
 		var minutes = Math.floor(temp / 6000);
 		temp = temp % 6000;
 		var seconds = Math.floor(temp / 100);
