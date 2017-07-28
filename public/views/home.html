@@ -34,7 +34,15 @@
 	</ul>
 </div>
 
-<div class="toggle-btn-container" ng-click="toggleTab()" 
-	ng-class="{ 'times-toggle' : !viewingStats, 'stats-toggle': viewingStats }">
-	<h3>{{ viewingStats ? 'times' : 'stats' }}</h3>
+<div class="buttons">
+	<div class="btn-container" ng-click="toggleTab()" 
+		ng-class="{ 'times-toggle' : !viewingStats, 'stats-toggle': viewingStats }">
+		<h3>{{ viewingStats ? 'times' : 'stats' }}</h3>
+	</div>
+
+	<div class="btn-container delete" ng-click="deleteTimes()">
+		<h3>clear</h3>
+	</div>
 </div>
+
+

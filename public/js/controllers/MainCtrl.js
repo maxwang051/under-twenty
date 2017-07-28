@@ -18,6 +18,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 	};
 	$scope.viewingStats = false;
 
+
 	$scope.$watch('times', function(newValue, oldValue) {
 		var sum = 0;
 		var best = Number.MAX_SAFE_INTEGER;
@@ -42,12 +43,14 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 		if (best < Number.MAX_SAFE_INTEGER) {
 			$scope.stats.best.value = formatTime(best);
 		}
+
+		localStorage.setItem('solveTimes', JSON.stringify($scope.times));
 		
 	}, true);
 
 	$scope.toggleTab = function() {
 		$scope.viewingStats = !$scope.viewingStats;
-	}
+	};
 
 	$scope.$on('space up', function(e, args) {
 		if (begin) {
@@ -56,21 +59,29 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 		} else if (!begin) {
 			begin = true;
 		}
-	})	
+	});
 
 	$scope.$on('space down', function(e, args) {
 		begin ? null : timerStop();
-	})
+	});
 
 	$scope.removeTime = function(time) {
 		var index = $scope.times.indexOf(time);
 		$scope.times.splice(index, 1);
-	}
+	};
+
+	$scope.deleteTimes = function() {
+		$scope.times = [];
+		for (var stat in $scope.stats) {
+			$scope.stats[stat].value = '00:00.00'; 
+		}
+		localStorage.setItem('solveTimes', JSON.stringify([]));
+	};
 
 	var timerStart = function() {
 		$scope.$broadcast('timer-start');
 		timerStarted = true;
-	}
+	};
 
 	var timerStop = function() {
 		$scope.$broadcast('timer-stop');
@@ -81,10 +92,9 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 				parseInt($scope.currentSeconds)*100 + parseInt($scope.currentHundredths),
 			formatted: $scope.currentMinutes + ":" + $scope.currentSeconds + "." + $scope.currentHundredths
 		});
-		localStorage.setItem('solveTimes', JSON.stringify($scope.times));
 
 		$scope.$apply();
-	}
+	};
 
 	var formatTime = function(time) {
 		var temp = time;
@@ -99,6 +109,6 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 		var hString = hundredths < 10 ? '0'+hundredths : ''+hundredths;
 
 		return mString + ':' + sString + '.' + hString;
-	}
+	};
 
 });

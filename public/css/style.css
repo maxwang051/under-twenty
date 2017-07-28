@@ -121,11 +121,16 @@ body {
 	transform: translateY(-50%);
 }
 
-.toggle-btn-container {
+.buttons {
+	margin: auto;
+	width: 265px;
+}
+
+.btn-container {
+	display: inline-block;
 	font-family: 'Cabin', sans-serif;
 	color: #3E3E3E;
 	cursor: pointer;
-	margin: auto;
 	background: white;
 	border: 5px solid #3E3E3E;
 	border-bottom-left-radius: 5px;
@@ -153,9 +158,13 @@ body {
 }
 
 .times-toggle {
-	background-color: #baffc9;
+	background-color: #ffffba;
 }
 
 .stats-toggle {
 	background-color: #bae1ff;
+}
+
+.delete {
+	background-color: #ffb3ba;
 }
