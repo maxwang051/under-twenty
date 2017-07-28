@@ -86,7 +86,7 @@ body {
 }
 
 .time-box {
-	margin: 5px;
+	margin: 0 5px 5px 5px;
 	position: relative;
 	background: white;
 	color: #3E3E3E;

@@ -2,7 +2,10 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 	var timerStarted = false;
 	var begin = true;
 
-	$scope.times = [];
+	$scope.saved = localStorage.getItem('solveTimes');
+	$scope.times = (localStorage.getItem('solveTimes') !== null) ? JSON.parse($scope.saved) : [];
+	localStorage.setItem('solveTimes', JSON.stringify($scope.times));
+
 	$scope.stats = {
 		average: {
 			label: 'avg',
@@ -78,6 +81,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 				parseInt($scope.currentSeconds)*100 + parseInt($scope.currentHundredths),
 			formatted: $scope.currentMinutes + ":" + $scope.currentSeconds + "." + $scope.currentHundredths
 		});
+		localStorage.setItem('solveTimes', JSON.stringify($scope.times));
 
 		$scope.$apply();
 	}

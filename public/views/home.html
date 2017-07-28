@@ -16,7 +16,7 @@
 
 <div class="times">
 	<ul ng-if="times.length && !viewingStats">
-		<li ng-repeat="time in times" class="time-box">
+		<li ng-repeat="time in times track by $index" class="time-box">
 			<span class="removeTime" ng-click="removeTime(time)">x</span><span class="time">{{ time.formatted }}</span>
 		</li>
 	</ul>
