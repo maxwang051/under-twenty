@@ -14,6 +14,10 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 		best: {
 			label: 'best',
 			value: '00:00.00'
+		},
+		lastTen: {
+			label: 'last 10',
+			value: '00:00.00'
 		}
 	};
 	$scope.viewingStats = false;
@@ -21,23 +25,30 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 
 	$scope.$watch('times', function(newValue, oldValue) {
 		var sum = 0;
+		var lastTenSum = 0;
 		var best = Number.MAX_SAFE_INTEGER;
 		for (var i = 0; i < newValue.length; i++) {
 			if (newValue[i].time) {
-				if (typeof newValue[i].time === 'string') {
-					console.log(newValue[i].time);
-				}
 				if (newValue[i].time < best) {
 					best = newValue[i].time;
 				}
+
+				if (i < 10) {
+					lastTenSum += newValue[i].time;
+				}
+
 				sum += newValue[i].time;
 			}
 		}
 
 		if (sum) {
 			var average = sum / $scope.times.length;
-
 			$scope.stats.average.value = formatTime(average);
+		}
+
+		if (lastTenSum) {
+			var average = lastTenSum / Math.min($scope.times.length, 10);
+			$scope.stats.lastTen.value = formatTime(average);
 		}
 
 		if (best < Number.MAX_SAFE_INTEGER) {

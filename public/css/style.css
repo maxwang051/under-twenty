@@ -74,7 +74,7 @@ body {
 .times {
 	background: #3E3E3E;
 	width: 300px;
-	height: 50vh;
+	height: 45vh;
 	margin: auto;
 	overflow: scroll;
 	border-top: 6px solid #3E3E3E;
@@ -142,7 +142,7 @@ body {
 }
 
 .stat-box {
-	padding-right: 45px;
+	padding-right: 30px;
 	line-height: 60px;
 	font-size: 2em;
 	margin: 0 5px 5px 5px;
