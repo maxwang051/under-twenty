@@ -55,6 +55,10 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 			$scope.stats.best.value = formatTime(best);
 		}
 
+		if ($scope.times.length === 0) {
+			clearStats();
+		}
+
 		localStorage.setItem('solveTimes', JSON.stringify($scope.times));
 		
 	}, true);
@@ -83,9 +87,8 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 
 	$scope.deleteTimes = function() {
 		$scope.times = [];
-		for (var stat in $scope.stats) {
-			$scope.stats[stat].value = '00:00.00'; 
-		}
+		clearStats();
+
 		localStorage.setItem('solveTimes', JSON.stringify([]));
 	};
 
@@ -121,5 +124,11 @@ angular.module('MainCtrl', []).controller('MainController', function($scope) {
 
 		return mString + ':' + sString + '.' + hString;
 	};
+
+	var clearStats = function() {
+		for (var stat in $scope.stats) {
+			$scope.stats[stat].value = '00:00.00'; 
+		}
+	}
 
 });
